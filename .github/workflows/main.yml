@@ -1,0 +1,22 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: Shashwat_CV.tex
+      - name: commit-build-config
+        run: |
+          git config --local user.email "cv_complie@github.com"
+          git config --local user.name "Github Actions CV bot"
+          git add Shashwat_CV.pdf
+          git commit -m "cv build"
+      - name: push-build-config
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
