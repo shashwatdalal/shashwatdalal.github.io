@@ -12,7 +12,7 @@ jobs:
           root_file: Shashwat_CV.tex
           latexmk_use_xelatex: true
       - name: Commit PDF
-        run: 
+        run: |
           git config --local user.email "cv_complie@github.com"
           git config --local user.name "Github Actions CV bot"
           git add Shashwat_CV.pdf
