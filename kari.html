@@ -1,55 +1,102 @@
-<html>
+<!DOCTYPE html>
+<!-- oheart6 adds and checks annotations programmatically -->
+
+<html lang="en">
 	<head>
-		<script src="https://cdn.jsdelivr.net/npm/three@0.135.0/build/three.min.js"></script>
+		<title>three.js webgl - OBJLoader + MTLLoader</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #000;
+				color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+			#info {
+				color: #fff;
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				text-align: center;
+				z-index: 100;
+				display:block;
+			}
+			
+			#activate {
+				color: #fff;
+				position: absolute;
+				top: 50px;
+				left: 20px;
+				width: 100%;
+				z-index: 103;
+				display:block;
+			}
+			
+			#partList {
+				color: #fff;
+				position: absolute;
+				top: 200px;
+				left: 20px;
+				width: 100%;
+				text-align: left;
+				z-index: 100;
+				display:block;
+				font-size: 16px;
+			}
+			
+			#info a {
+				color: #f00;
+				font-weight: bold;
+				text-decoration: underline;
+				cursor: pointer
+			}
+			
+			.button {
+				background-color: #4CAF50;
+				border: none;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				font-family: Monospace;
+			}
+			
+			#threeCanvas {
+				position: absolute;
+				z-index: 99;
+			}
+		</style>
 	</head>
+
 	<body>
-		<canvas id="myCanvas"></canvas>
-		<script>
-  // Initialize the scene, camera, renderer
-  var scene = new THREE.Scene();
-  var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  var renderer = new THREE.WebGLRenderer({canvas: document.getElementById("myCanvas")});
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.position.z = 5;
+		<div id="heart-app">
+			<canvas id="threeCanvas"></canvas>
+			<div id="info">
+				<a href="http://threejs.org" target="_blank">three.js</a> MOVE mouse &amp; press LEFT/A: rotate, MIDDLE/S: zoom, RIGHT/D: pan
+			</div>
+			
+			<div id="activate">
+				<button id="move_heart_btn" type="button" class="button">Open/Close Heart</button>
+				<br>
+				<br>
+				<button id="hide_dots_btn" type="button" class="button" onclick="hideDots()">Hide/Show Dots</button>
+			</div>
+			
+			<div id="partList">
+				1. Aorta <br>
+				2. Arch of the aorta <br>
+				3. Left auricular appendage <br>
+				4. Pulmonary artery <br>
+				5. Pulmonary veins <br>
+				6. Vena cava superior <br>
+			</div>
+		</div>
+		<script src="js/Tween.js"></script>
+		<script type="module" src="js/main.js"></script>
 
-  // Add a heart-shaped mesh to the scene
-  
-  // Define the heart shape as a path of curves
-  var heartShape = new THREE.Shape();
-  heartShape.moveTo(0, 0);
-  heartShape.bezierCurveTo(1.5, 1.5, 1.5, 4, 0, 6);
-  heartShape.bezierCurveTo(-1.5, 4, -1.5, 1.5, 0, 0);
-
-  // Define the extrude settings
-  var extrudeSettings = {
-    steps: 2,
-    depth: 1,
-    bevelEnabled: true,
-    bevelThickness: 0.1,
-    bevelSize: 0.1,
-    bevelSegments: 1
-  };
-
-  // Create the extruded heart geometry
-  var geometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
-
-  // Create a mesh from the geometry and add it to the scene
-  var material = new THREE.MeshBasicMaterial({color: 0xff0000});
-  var heart = new THREE.Mesh(geometry, material);
-  scene.add(heart);
-
-  // Add lighting to the scene
-  var light = new THREE.PointLight(0xffffff, 1, 100);
-  light.position.set(0, 0, 5);
-  scene.add(light);
-  // Animate the objects
-  function animate() {
-    requestAnimationFrame(animate);
-    heart.rotation.x += 0.01;
-    heart.rotation.y += 0.01;
-    renderer.render(scene, camera);
-  }
-  animate();
-</script>
 	</body>
 </html>
