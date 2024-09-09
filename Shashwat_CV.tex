@@ -1,7 +1,9 @@
 \documentclass[a4paper]{deedy-resume} % Use US Letter paper, change to a4paper for A4 
 \usepackage{enumitem}
+\usepackage{multicol}
 \setlist[itemize]{topsep=-2pt,itemsep=-1pt,partopsep=4pt,parsep=4pt}
 \setlist[description]{topsep=0pt,itemsep=2pt,partopsep=4pt,parsep=4pt}
+
 
 \begin{document}
 
@@ -9,17 +11,11 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 \namesection{Shashwat}{Dalal}{ % Your name
-\begin{center}
-    \runsubsection{   
-    \hspace{2.25cm}Junior Principal Machine Learning Engineer, Quantumblack
-    \newline 
-    Computing MEng, Imperial College London} 
-\end{center}
-\urlstyle{same}\url{shashdalal@gmail.com}
-\hspace{0.5cm}
-\urlstyle{same}\url{www.linkedin.com/in/shashwat-dalal}
-\hspace{0.5cm}
-\urlstyle{same}\url{shashwatdalal.github.io}
+    \urlstyle{same}\url{shashdalal@gmail.com}
+    \hspace{0.5cm}
+    \urlstyle{same}\url{linkedin.com/in/shashwat-dalal}
+    \hspace{0.5cm}
+    \urlstyle{same}\url{shashwatdalal.github.io}
 }
 %------------------------------------------------
 % Work Experience
@@ -28,53 +24,64 @@
 \runsubsection{QuantumBlack (A McKinsey Company)}
 \descript{| Junior Principal Machine Learning Engineer}
 \location{September 2020 – Current | London, United Kingdom}
-\begin{itemize}
-    \item \textbf{Tech Lead for Simulation-Based Optimization Group}: Guided and shaped 10+ client engagements across various industries, 
+\begin{callout}{Tech Lead for Simulation-Based Optimization Group}
+    \linebreak
+    Guided and shaped 10+ client engagements across various industries,
     including \textbf{energy, engineering, logistics, and life-science}, to optimize operations and improve decision-making processes through simulation and advanced analytics.
-    \item \textbf{Bidding Agent for Battery Energy Storage System}: Led a team of 5 engineers to develop a \textbf{reinforcement learning} based bidding agent that 
-    increased revenue by 34\% compared to a linear programming benchmark. Responsible for technical deliverables, project management, and system architecture.
-    \item \textbf{Scaling Protein Engineering}: Led a migration of a protein engineering asset to an elastic GPU cluster using Ray and Kubernetes, significantly reducing costs 
-    and boosting throughput for our life-science clients. For the protein folding pipeline, achieved a 57x speedup, a 70\% improvement in GPU utilization, 
-    and a 30\% reduction in costs by scaling across a 20 V100 GPU cluster. For the molecular embedding pipeline, delivered a ~37x speedup, a 40x increase in throughput, 
-    and a 60\% cost reduction.
-    \item \textbf{Turbine Design Optimization}: Led the development of a distributed black-box optimizer for turbine operations and condition monitoring, 
-    improving turbine efficiency by +0.4\% (validated by CFD) in 1/20th the time and at half the cost compared to previous methods. 
-    The optimizer utilized genetic and Bayesian methods and ran on a GPU cluster of 20 machines using Ray.
-    \item \textbf{Supply Chain Optimisation} Led a team of 6 in designing a linear optimization model for a global computer manufacturer, 
-    aimed at unifying production and capacity planning across regions. Integrated with internal data platforms to enable API-driven decision-making 
-    based on dynamic forecasts, backlog management, and third-party manufacturing capacity constraints.
-    \item \textbf{Clinical Trial Optimization}: Spearheaded the data engineering workstream for optimizing clinical trial site selection. 
-    Developed a unified training and inference data-engineering framework, which reduced project timelines by one week.
-\end{itemize} 
+\end{callout}
+\begin{multicols}{2}
+    \descript{Simulation-Based Optimisation:}
+    \begin{itemize}
+        \item  \textbf{Bidding Agent for Battery Energy Storage System}: Led a team of 5 engineers to develop a \textbf{reinforcement learning} based bidding agent that
+              increased revenue by 34\% compared to a linear programming benchmark. Responsible for technical deliverables, project management, and system architecture.
+        \item \textbf{Supply Chain Optimisation} Led a team of 6 in designing a linear optimization model for a global computer manufacturer,
+              aimed at unifying production and capacity planning across regions. Integrated with internal data platforms to enable API-driven decision-making
+              based on dynamic forecasts, backlog management, and third-party manufacturing capacity constraints.
+    \end{itemize}
+    \columnbreak
+    \descript{Distributed Computation:}
+    \begin{itemize}
+        \item \textbf{Scaling Protein Engineering}: Led a migration of a protein engineering asset to an elastic GPU cluster using Ray and Kubernetes, significantly reducing costs
+              and boosting throughput for our life-science clients. For the protein folding pipeline, achieved a 57x speedup, a 70\% improvement in GPU utilization,
+              and a 30\% reduction in costs by scaling across a 20 V100 GPU cluster. For the molecular embedding pipeline, delivered a ~37x speedup, a 40x increase in throughput,
+              and a 60\% cost reduction.
+        \item \textbf{Turbine Design Optimisation}: Led the development of a distributed black-box optimizer for turbine operations and condition monitoring,
+              improving turbine efficiency by +0.4\% (validated by CFD) in 1/20th the time and at half the cost compared to previous methods.
+              The optimizer utilized genetic and Bayesian methods and ran on a GPU cluster of 20 machines using Ray.
+              \columnbreak
+    \end{itemize}
+\end{multicols}
+
 \runsubsection{Bloomberg}
 \descript{| Software Engineering Industrial Placement}
 \location{April 2019 – September 2019 | London, United Kingdom}
 \begin{itemize}
-    \item Maintained \textbf{BuildStream}, an open source build and integration tool written in \textbf{Python}.
-    \item Wrote a plugin to automate the creation of reproducible and layered \textbf{Docker} images.
-    \\
-    \textit{Report:} https://shashwatdalal.github.io/files/placement\_report.pdf \\
+    \item \textbf{BuildStream Docker Plugin:}(
+          \href{https://github.com/shashwatdalal/shashwatdalal.github.io/blob/master/files/placement_report.pdf}{\textit{Report}},
+          \href{https://gitlab.com/BuildStream/bst-plugins-container}{\textit{Code}}
+          )
+          \linebreak
+          Prototyped a plugin that enabled users of BuildStream, an open-source software bulid system, to
+          seamlessly migrate to containerization platforms, optimizing image creation, reducing rebuilds, and preserving existing workflows.
 \end{itemize}
-\runsubsection{Barclays Investment Bank}
-\descript{| Summer Technology Analyst}
-\location{June 2018 – September 2018 | London, United Kingdom}
 %------------------------------------------------
 % Education
 %------------------------------------------------
 \section{Education}
-    \runsubsection{Imperial College London}
-    \descript{| Computing MEng. (Graduated 1st Class)}
-    \location{2016 - 2020 | London, United Kingdom}
-    \begin{description}
-        \item[Academic Projects] \hspace{7.5cm}
-            \begin{itemize}
-                \item \textbf{Effect of Non-Identically Distributed Data on Federated Learning for Next-Word Prediction:} Final year project. \\
-                \textit{Report: } https://shashwatdalal.github.io/files/fl\_fyp.pdf \\
-                \textit{Slides: } https://bit.ly/3bpAU8g
-                \item \textbf{Aspect-based Sentiment Analysis with Goldman Sachs:} In a team of six, built an aspect-based sentiment analysis engine for the asset management engineering team. Back-end written in \textbf{Python} and database layer used \textbf{MySQL}, and \textbf{Microsoft Cosmos}. \\
-                \textit{Report:} https://shashwatdalal.github.io/files/Software\_Engineering\_Project\_Report.pdf \\ \textit{Code:} https://dev.azure.com/vapesoc/362\%20Software\%20Engineering\%20Project/
-        \end{itemize}
-    \end{description}
+\runsubsection{Imperial College London}
+\descript{| Computing MEng. (Graduated 1st Class)}
+\location{2016 - 2020 | London, United Kingdom}
+\begin{itemize}
+    \item \textbf{Effect of Non-Identically Distributed Data on Federated Learning for Next-Word Prediction:}(
+          \href{https://shashwatdalal.github.io/files/fl_fyp.pdf}{\textit{Report}},
+          \href{https://bit.ly/3bpAU8g}{\textit{Slides}})
+    \item \textbf{Aspect-based Sentiment Analysis with Goldman Sachs:}(
+          \href{https://rb.gy/8juk2v}{\textit{Report}},
+          \href{https://dev.azure.com/vapesoc/362\%20Software\%20Engineering\%20Project/}{\textit{Code}})
+          \linebreak
+          In a team of six, built an aspect-based sentiment analysis engine for the asset management engineering team. Back-end written in \textbf{Python} and database layer used \textbf{MySQL}, and \textbf{Microsoft Cosmos}.
+
+\end{itemize}
 %------------------------------------------------
 % Skill-Set Summarized
 %------------------------------------------------
@@ -82,16 +89,16 @@
 
 \begin{minipage}[t]{0.45\textwidth}
 
-\subsection{Technical Skills}
-Python \textbullet{} Ray \textbullet{} PyTorch \textbullet{} Java \textbullet{} Docker \textbullet{} Kubernetes  \\  \textbullet{} Deep Learning \textbullet{} Bayesian Optimisation \textbullet{} \\ Reinforcement Learning \textbullet{} Federated Learning \textbullet{} Linear Programming. \textbullet{} Natural Language Processing \textbullet{} Distributed Systems \textbullet{} GPUs
+    \subsection{Technical Skills}
+    Python \textbullet{} Ray \textbullet{} PyTorch \textbullet{} Java \textbullet{} Docker \textbullet{} Kubernetes  \\  \textbullet{} Deep Learning \textbullet{} Bayesian Optimisation \textbullet{} \\ Reinforcement Learning \textbullet{} Federated Learning \textbullet{} Linear Programming. \textbullet{} Natural Language Processing \textbullet{} Distributed Systems \textbullet{} GPUs
 
 \end{minipage}
 \begin{minipage}[t]{10\textwidth}
 \end{minipage}
 \begin{minipage}[t]{0.45\textwidth}
-\subsection{Languages}
-English (Written/Spoken Fluency) \textbullet{} Gujarati (Spoken Fluency) \textbullet{} Japanese (Written/Spoken Conversational) \textbullet{} \\  Spanish (Written/Spoken Conversational)  \textbullet{} \\  Hindi (Spoken Conversational)
+    \subsection{Languages}
+    English (Written/Spoken Fluency) \textbullet{} Gujarati (Spoken Fluency) \textbullet{} Japanese (Written/Spoken Conversational) \textbullet{} \\  Spanish (Written/Spoken Conversational)  \textbullet{} \\  Hindi (Spoken Conversational)
 
 \end{minipage}
 
-\end{document} 
+\end{document}

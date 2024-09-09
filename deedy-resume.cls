@@ -10,6 +10,8 @@
 
 \usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry} % Specifies horizontal and vertical page margins
 \usepackage{hyperref} % Required for links
+\usepackage[most]{tcolorbox}
+
 
 %----------------------------------------------------------------------------------------
 %	COLORS
@@ -42,26 +44,26 @@
 \setlength{\TPHorizModule}{0.01\paperwidth} % Sets the units for the horizontal position used in the \begin{textblock} argument
 \setlength{\TPVertModule}{0.01\paperwidth} % Sets the units for the vertical position used in the \begin{textblock} argument
 \newcommand{\lastupdated}{ % Create a new command for printing the Last Updated text
-\begin{textblock}{25}(75,2) % The position of the Last Updated text on the page (75% of the page across, 2% down)
-\color{date}\fontspec[Path = fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont % Text styling of the text
-Last Updated on \today % Last Updated text
-\end{textblock}}
+    \begin{textblock}{25}(75,2) % The position of the Last Updated text on the page (75% of the page across, 2% down)
+        \color{date}\fontspec[Path = fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont % Text styling of the text
+        Last Updated on \today % Last Updated text
+    \end{textblock}}
 
 %----------------------------------------------------------------------------------------
 %	MAIN HEADING COMMAND
 %----------------------------------------------------------------------------------------
 
 \newcommand{\namesection}[3]{ % Defines the command for the main heading
-\centering{ % Center the name
-\fontsize{40pt}{60pt} % Font size
-\fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 % First name font
-\fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #2 % Last name font
-} \\[5pt] % Whitespace between the name and contact information
-\centering{ % Center the contact information
-\color{headings} % Use the headings color
-\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3} % Contact information font
-\noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}} % Horizontal rule
-\vspace{-5pt} % Reduce whitespace after the rule slightly
+    \centering{ % Center the name
+        \fontsize{30pt}{50pt} % Font size
+        \fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 % First name font
+        \fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #2 % Last name font
+    } \\[5pt] % Whitespace between the name and contact information
+    \centering{ % Center the contact information
+        \color{headings} % Use the headings color
+        \fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3} % Contact information font
+    \noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}} % Horizontal rule
+    \vspace{-5pt} % Reduce whitespace after the rule slightly
 }
 
 %----------------------------------------------------------------------------------------
@@ -75,19 +77,19 @@ Last Updated on \today % Last Updated text
 \newcommand{\sectionspace}{\vspace{8pt}} % Defines a command to add a set amount of space after sections and subsections
 
 \titleformat{\section}{ % Customize the large section titles
-\color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{}{0em}{}
+    \color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{}{0em}{}
 
 \titleformat{\subsection}{ % Customize the subsections and places worked/studied titles
-\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
+    \color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
 
 \newcommand{\runsubsection}[1]{ % Used for creating subsections where a description is required on the same line
-\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+    \color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
 
 \newcommand{\descript}[1]{ % Used for describing the subsection either on the same line or underneath
-\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+    \color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
 
 \newcommand{\location}[1]{ % Used for specifying a duration and/or location under a subsection
-\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+    \color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
 
 %----------------------------------------------------------------------------------------
 %	SECTION TITLE STYLING AND SPACING
@@ -95,4 +97,9 @@ Last Updated on \today % Last Updated text
 
 \newenvironment{tightitemize} % Defines the tightitemize environment which modifies the itemize environment to be more compact
 {\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
-{\end{itemize}\vspace{-\topsep}}
+        {\end{itemize}\vspace{-\topsep}}
+
+\newtcolorbox{callout}[2][]{breakable,sharp corners, skin=enhancedmiddle jigsaw,
+    boxrule=0mm,leftrule=2mm,boxsep=0mm,arc=0mm,outer arc=0mm,attach title to upper,
+    after title={:\ }, coltitle=black,colback=gray!10,colframe=black, title={#2},
+    fonttitle=\bfseries,halign=flush left,#1}
