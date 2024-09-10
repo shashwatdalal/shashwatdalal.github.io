@@ -100,6 +100,6 @@
         {\end{itemize}\vspace{-\topsep}}
 
 \newtcolorbox{callout}[2][]{breakable,sharp corners, skin=enhancedmiddle jigsaw,
-    boxrule=0mm,leftrule=2mm,boxsep=0mm,arc=0mm,outer arc=0mm,attach title to upper,
+    boxrule=0mm,leftrule=1mm,boxsep=0mm,arc=0mm,outer arc=0mm,attach title to upper,
     after title={:\ }, coltitle=black,colback=gray!10,colframe=black, title={#2},
     fonttitle=\bfseries,halign=flush left,#1}
