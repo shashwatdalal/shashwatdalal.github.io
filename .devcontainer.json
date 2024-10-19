@@ -17,5 +17,6 @@
       ]
     }
   },
+  "containerUser": "root",
   "postStartCommand": "tlmgr install xelatex"
 }
