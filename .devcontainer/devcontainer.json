@@ -10,6 +10,12 @@
 			"preserve_apt_list": true,
 			"packages": "texlive-full",
 			"ppas": "ppa:deadsnakes/ppa"
+		},
+		"vscode": {
+			"extensions": [
+			  // LaTeX Workshop, goes without saying.
+			  "james-yu.latex-workshop",
+			]
 		}
 	}
 
