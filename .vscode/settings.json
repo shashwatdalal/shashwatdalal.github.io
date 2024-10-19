@@ -27,5 +27,13 @@
           "xelatex"
          ]
         },
-       ]
+       ],
+       "files.exclude": {
+            "**/*.aux": true,
+            "**/*.log": true,
+            "**/*.out": true,
+            "**/*.gz": true,
+            ".gitignore": true,
+            ".github": true,
+         }
 }
