@@ -56,8 +56,8 @@
 \newcommand{\namesection}[3]{ % Defines the command for the main heading
     \centering{ % Center the name
         \fontsize{30pt}{50pt} % Font size
-        \fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 % First name font
-        \fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #2 % Last name font
+        \fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #1 % First name font
+        \fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2 % Last name font
     } \\[5pt] % Whitespace between the name and contact information
     \centering{ % Center the contact information
         \color{headings} % Use the headings color
