@@ -3,8 +3,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        // LaTeX Workshop, goes without saying.
         "james-yu.latex-workshop",
+        "streetsidesoftware.code-spell-checker"
       ]
     }
   },
