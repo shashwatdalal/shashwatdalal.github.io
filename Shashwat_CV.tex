@@ -1,8 +1,10 @@
-\documentclass[a4paper]{deedy-resume} % Use US Letter paper, change to a4paper for A4 
+\documentclass[a4paper]{deedy-resume} % Use US Letter paper, change to a4paper for A4
 \usepackage{enumitem}
 \usepackage{multicol}
-\setlist[itemize]{topsep=-2pt,itemsep=-1pt,partopsep=4pt,parsep=4pt}
-\setlist[description]{topsep=0pt,itemsep=2pt,partopsep=4pt,parsep=4pt}
+\usepackage{geometry}
+\geometry{vmargin=0.5cm}
+\setlist[itemize]{topsep=-2pt,itemsep=-2pt,partopsep=0pt,parsep=0pt}
+\setlist[description]{topsep=0pt,itemsep=2pt,partopsep=0pt,parsep=0pt}
 
 
 \begin{document}
@@ -12,8 +14,8 @@
 %----------------------------------------------------------------------------------------
 \namesection{Shashwat}{Dalal}{ % Your name
     \begin{center}
-        \runsubsection{   
-            Machine learning engineer specialising in large-scale optimization
+        \runsubsection{
+            Machine Learning Engineer
         }
     \end{center}
     \urlstyle{same}\url{shashdalal@gmail.com}
@@ -27,9 +29,20 @@
 %------------------------------------------------
 \vspace{-10pt}
 \section{Work Experience}
+\runsubsection{Mistral AI}
+\descript{| Research Engineer, Post-Training Infrastructure}
+\location{March 2025 – Present | London \& Paris}
+\vspace{-5pt}
+\begin{itemize}
+    \item Designed and built a post-training data platform using \textbf{RayData}, \textbf{Flyte}, and \textbf{DataHub}, standardising rejection sampling and synthetic data generation workflows for \textbf{3 science teams}.
+    \item Led an RFC from CTO directive through cross-team consensus to delivery: built a \textbf{Pydantic}-based vendor ingestion service, reducing onboarding from \textbf{3 weeks to 1 day} and upskilling an entire non-technical function to self-serve via Pydantic and Git.
+    \item Built sanitised data pipelines for \textbf{Le Chat} (Mistral's consumer chatbot), now used by \textbf{4+ teams} across the full post-training recipe including SFT, RLHF, and evaluation.
+    \item Developed an automated pipeline to generate diverse, full-stack \textbf{MCP servers} backed by SQL databases for RL training data.
+\end{itemize}
+
 \runsubsection{QuantumBlack (A McKinsey Company)}
 \descript{| Junior Principal Machine Learning Engineer}
-\location{September 2020 – Current | London, United Kingdom}
+\location{September 2020 – February 2025 | London, United Kingdom}
 \vspace{-5pt}
 \begin{callout}{Tech Lead for Intelligent Digital Twin Service Line}
 \linebreak
@@ -55,62 +68,34 @@
         \item Improved turbine efficiency by \textbf{+0.4\%} (power to supply approximately \textbf{3,000 more homes} per year, for a typical dam), \textbf{95\% faster} at \textbf{50\% less compute cost} compared to previous methods.
     \end{itemize}
 
-    \vspace{0.2cm}
-    \textbf{Scaling Digital Protein Design:}
-    \begin{itemize}
-        \item Led the migration of a in-silico protein engineering asset to an elastic \textbf{GPU cluster} using \textbf{Ray and Kubernetes}, reducing costs and boosting throughput for clients.
-        \item Achieved a \textbf{57x speedup} in protein folding and a \textbf{37x speedup} in molecular embedding through scaling and improving \textbf{GPU} utilisation, whilst reducing costs by \textbf{30-60\%}.
-    \end{itemize}
-
-
     \columnbreak
 
     \vspace{0.1cm}
     \textbf{Bidding Agent for Battery Energy Storage System:}
     \begin{itemize}
-        \item Led a \textbf{team of 5} to develop a \textbf{reinforcement learning-based} bidding agent for a battery energy storage system, 
-        overseeing technical deliverables, system architecture, and project management.
+        \item Led a \textbf{team of 5} to develop a \textbf{reinforcement learning-based} bidding agent for a battery energy storage system, overseeing technical deliverables, system architecture, and project management.
         \item The agent outperformed the existing receding horizon linear program solution by \textbf{34\%} in returns when tested against a simulated benchmark.
-    \end{itemize}
-
-    \vspace{0.2cm}
-    \textbf{Supply Chain Optimisation:}
-    \begin{itemize}
-        \item Supported a \textbf{team of 6} to design and develop a \textbf{mixed-integer linear optimisation model} for a global computer manufacturer, unifying production and capacity planning across regions.
-        \item Integrating the model with internal data platforms, enabling a centralised decision-making service based on real-time forecasts, backlog management, and manufacturing constraints.
     \end{itemize}
 
 \end{multicols}
 
 
 \runsubsection{Bloomberg}
-\descript{| Software Engineering (Industrial Placement)}
-\location{April 2019 – September 2019 | London, United Kingdom}
-\begin{itemize}
-    \item \textbf{BuildStream Docker Plugin:}
-          (\href{https://github.com/shashwatdalal/shashwatdalal.github.io/blob/master/files/placement_report.pdf}{\textit{Report}},
-          \href{https://gitlab.com/BuildStream/bst-plugins-container}{\textit{Code}})
-          \linebreak
-          Prototyped a plugin that enabled users of BuildStream, an open-source software build system, to
-          seamlessly migrate to containerization platforms, optimising image creation, reducing rebuilds, and preserving existing workflows.
-\end{itemize}
+\descript{| Software Engineering Intern | April 2019 – September 2019 | London}
+\vspace{-3pt}
+Built a \textbf{BuildStream Docker Plugin} enabling users of the open-source build system to seamlessly migrate to containerisation, optimising image creation and reducing rebuilds.
+\vspace{4pt}
 %------------------------------------------------
 % Education
 %------------------------------------------------
 \section{Education}
 \runsubsection{Imperial College London}
 \descript{| Computing MEng. (Graduated 1st Class)}
-\location{October 2016 - June 2020 | London, United Kingdom}
+\location{October 2016 – June 2020 | London, United Kingdom}
+\vspace{-5pt}
 \begin{itemize}
-    \item \textbf{Effect of Non-Identically Distributed Data on Federated Learning for Next-Word Prediction}
-          (\href{https://shashwatdalal.github.io/files/fl_fyp.pdf}{\textit{Report}},
-          \href{https://bit.ly/3bpAU8g}{\textit{Slides}})
-    \item \textbf{Aspect-based Sentiment Analysis with Goldman Sachs:}
-          (\href{https://github.com/shashwatdalal/shashwatdalal.github.io/blob/master/files/Software_Engineering_Project_Report.pdf}{\textit{Report}},
-          \href{https://dev.azure.com/vapesoc/362\%20Software\%20Engineering\%20Project/}{\textit{Code}})
-          \linebreak
-          In a team of six, built an aspect-based sentiment analysis engine for the asset management engineering team. Back-end written in \textbf{Python} and database layer used \textbf{MySQL}, and \textbf{Microsoft Cosmos}.
-
+    \item \textbf{Federated Learning Thesis:} Studied the effect of non-IID data on federated learning for next-word prediction (\href{https://shashwatdalal.github.io/files/fl_fyp.pdf}{\textit{Report}}).
+    \item \textbf{Aspect-based Sentiment Analysis with Goldman Sachs:} Built a sentiment analysis engine for the asset management team in a team of six; Python backend, MySQL and Microsoft Cosmos.
 \end{itemize}
 %------------------------------------------------
 % Skill-Set Summarized
@@ -120,14 +105,11 @@
 \begin{multicols}{2}
     \subsection{Technical-Skills}
     Python
-    \textbullet{} Machine Learning (PyTorch, TensorFlow, GPUs, Federated Learning)
-    \textbullet{} Distributed Systems (Ray, Kubernetes, Docker)
-    \textbullet{} Optimisation Algorithms (Linear, Genetic, Bayesian, Reinforcement Learning)
-    \textbullet{} AWS
-    \textbullet{} GCP
-    \textbullet{} NLP
-    \textbullet{} Java
-    \textbullet{} \LaTeX
+    \textbullet{} PyTorch
+    \textbullet{} Ray \textbullet{} RayData
+    \textbullet{} Flyte \textbullet{} DataHub \textbullet{} Pydantic
+    \textbullet{} Kubernetes \textbullet{} Docker
+    \textbullet{} AWS \textbullet{} GCP
 
     \columnbreak
 
